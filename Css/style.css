@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root{
+    --cyan: hsl(179, 62%, 43%);
+    --cyan2: hsla(179, 62%, 43%, 80%);
+    --lime: hsl(71, 73%, 54%);
+    --bg-grey: hsl(204, 43%, 93%);
+    --grey-blue: hsl(218, 22%, 67%);
+    --whiteSmoke: hsla(0, 0%, 100%, 0.7);
+    --whiteSmoke2: hsla(0, 0%, 100%, 0.5);
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* __STARTS-REAL-STYLING__ */
+
+
+body{
+    background-color: var(--bg-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Karla", sans-serif;
+}
+
+main{
+    width: 690px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.top{
+    padding: 2.5rem;
+}
+
+.top h2{
+    color: var(--cyan);
+    font-size: 1.6rem;
+}
+.top h3{
+    color: var(--lime);
+    margin-top: 1.5rem;
+    font-size: 1.195rem;
+}
+.top p{
+    color: var(--grey-blue);
+    margin-top: 1rem;
+    font-size: 1.06rem;
+}
+
+.bottom{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    border-radius: 0 0 10px 10px;
+}
+
+.container{
+    padding: 2.5rem 3rem;
+    color: white;
+}
+
+.left{
+    background-color: var(--cyan);
+    border-radius: 0 0 0 10px;
+}
+
+.left .price-container{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.left .price{
+    color: var(--whiteSmoke2);
+}
+
+.left .price-container span{
+    font-size: 2rem;
+    font-weight: 700;
+    padding-right: 0.4rem;
+    color: white;
+}
+
+.left>p{
+    color: var(--whiteSmoke);
+}
+
+.left .btn{
+    color: white;
+    background-color: var(--lime);
+    width: 100%;
+    border: none;
+    height: 3rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.left .btn:hover{
+    cursor: pointer;
+}
+
+.right{
+    background-color: var(--cyan2);
+    border-radius: 0 0 10px 0;
+}
+ 
+.right p{
+    color: var(--whiteSmoke);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+@media (width < 800px) {
+    body{
+        padding: 4rem 2rem;
+    }
+
+    
+    main, .bottom{
+        width: auto;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+    }
+    .top{
+        padding: 1.5rem;
+    }
+    
+    .top br{
+        display: none;
+    }
+
+    .top h2{
+        font-size: 1.2rem;
+    }
+
+    .top h3{
+        font-size: 0.9rem;
+        text-wrap: wrap;
+    }
+
+    .top p{
+        font-size: 0.85rem;
+        line-height: 1.5rem;
+    }
+
+    .container{
+        padding: 1.5rem;
+    }
+
+    .left{
+        border-radius: 0;
+    }
+
+    .right{
+        border-radius: 0 0 5px 5px;
+    }
+}
